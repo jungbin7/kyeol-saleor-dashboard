@@ -29,14 +29,14 @@ ARG STATIC_URL
 ARG SKIP_SOURCEMAPS
 ARG LOCALE_CODE
 
-ENV API_URL ${API_URL:-http://localhost:8000/graphql/}
-ENV APP_MOUNT_URI ${APP_MOUNT_URI:-/dashboard/}
-ENV APPS_MARKETPLACE_API_URL ${APPS_MARKETPLACE_API_URL:-https://apps.saleor.io/api/v2/saleor-apps}
-ENV EXTENSIONS_API_URL ${EXTENSIONS_API_URL:-https://apps.saleor.io/api/v1/extensions}
-ENV APPS_TUNNEL_URL_KEYWORDS ${APPS_TUNNEL_URL_KEYWORDS}
-ENV STATIC_URL ${STATIC_URL:-/dashboard/}
-ENV SKIP_SOURCEMAPS ${SKIP_SOURCEMAPS:-true}
-ENV LOCALE_CODE ${LOCALE_CODE:-EN}
+ENV API_URL=${API_URL:-http://localhost:8000/graphql/}
+ENV APP_MOUNT_URI=${APP_MOUNT_URI:-/dashboard/}
+ENV APPS_MARKETPLACE_API_URL=${APPS_MARKETPLACE_API_URL:-https://apps.saleor.io/api/v2/saleor-apps}
+ENV EXTENSIONS_API_URL=${EXTENSIONS_API_URL:-https://apps.saleor.io/api/v1/extensions}
+ENV APPS_TUNNEL_URL_KEYWORDS=${APPS_TUNNEL_URL_KEYWORDS}
+ENV STATIC_URL=${STATIC_URL:-/dashboard/}
+ENV SKIP_SOURCEMAPS=${SKIP_SOURCEMAPS:-true}
+ENV LOCALE_CODE=${LOCALE_CODE:-EN}
 RUN pnpm run generate:main
 RUN pnpm exec cross-env NODE_OPTIONS=--max-old-space-size=8192 vite build
 
